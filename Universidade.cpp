@@ -9,7 +9,8 @@ Universidade::Universidade(const char n[])
     setNome("");
 }*/
 
-void Universidade::setNome(const char n[]){
+void Universidade::setNome(const char n[])
+{
     strcpy(nomeU,n);
 }
 char* Universidade::getNome()
