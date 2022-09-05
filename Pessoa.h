@@ -29,6 +29,8 @@ class Pessoa
 
     int getId();
     int informaIdade();
+    char* getNome();
+    
     //void informaNomeUniversidadeDptoId();
     
     //void informaNomeUniversidade();

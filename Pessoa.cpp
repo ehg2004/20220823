@@ -85,3 +85,10 @@ int Pessoa::getId()
 {
     dptoP =dpto;
 }*/
+
+char* Pessoa::getNome()
+{
+
+    return(nomeP);
+
+}
