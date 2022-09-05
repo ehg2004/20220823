@@ -14,8 +14,9 @@ class Universidade
     char nomeU[30];
    //vector< Departamento*> dptos;
    //Departamento* dptos[50];
-   list<Departamento*> dptos;
-
+   //list<Departamento*> dptos;
+    Departamento* firstDpto;
+    Departamento* atualDpto;
     int ndpto;
 
 
@@ -26,6 +27,7 @@ class Universidade
     char* getNome();
     void registraDpto(Departamento* newdpto= NULL, int index=0);
     void imprimeDptos();
+
     
 };
 

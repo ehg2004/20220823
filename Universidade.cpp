@@ -9,7 +9,8 @@ Universidade::Universidade()
 {   
     ndpto = 0;
     setNome();
-
+    atualDpto=0;
+    firstDpto=0;
     /*
     for(int i=0;i<ndpto;i++)
     {
@@ -64,18 +65,40 @@ void Universidade::imprimeDptos()
 
 void Universidade::registraDpto(Departamento* newdpto, int index)
 {
-    dptos.push_back(newdpto);
-    ndpto++;
+    
+    newdpto->setProxDpto(0);
+
+    if(firstDpto==0)
+    {
+        firstDpto=newdpto;
+        atualDpto=newdpto;
+    }
+    else
+    {
+        //newdpto->setProxDpto(atualDpto->getProxDpto());
+        atualDpto->setProxDpto(newdpto);
+        atualDpto=newdpto;
+    }
+    
+
 }
 
 void Universidade::imprimeDptos()
 {   
-    Departamento* pDep= NULL;
+    Departamento* i=firstDpto;
+    if(i!=0)
+    cout<<"lista de departamentos \n da "<< nomeU <<endl;
+    else
+    cout<<"lista vazia dos dptos de \n"<<nomeU<<endl;
+    
+    int flag =0;
 
-    list<Departamento*> ::iterator iterator;
-
-    for(iterator=dptos.begin() ; iterator!= dptos.end(); iterator++)
+    while((i!=firstDpto || flag != 1)&&i!=0)
     {   
-        cout<<(*iterator)->getNome()<<endl;
+        flag =1;
+
+        cout<<i->getNome()<<endl;
+
+        i= i->getProxDpto();
     }
 }
